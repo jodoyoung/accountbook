@@ -15,11 +15,11 @@ public interface Environment {
 	int DATABASE_VERSION = 1;
 
 	/** 지출/수입 내역 Table */
-	String QUERY_CREATE_TABLE_ACCOUNTING = "CREATE TABLE accounting (id TEXT PRIMARY KEY, type TEXT NOT NULL, amount INTEGER NOT NULL, deal_date TEXT NOT NULL);";
+	String QUERY_CREATE_TABLE_ACCOUNTING = "CREATE TABLE accounting (_id TEXT PRIMARY KEY, type TEXT NOT NULL, amount INTEGER NOT NULL, deal_date TEXT NOT NULL);";
 
 	/** Tag Table */
-	String QUERY_CREATE_TABLE_TAG = "CREATE TABLE tag (id TEXT PRIMARY KEY, name TEXT NOT NULL);";
+	String QUERY_CREATE_TABLE_TAG = "CREATE TABLE tag (_id TEXT PRIMARY KEY, name TEXT NOT NULL);";
 
 	/** Accounting-Tag Mapping Table */
-	String QUERY_CREATE_TABLE_ACCOUNTING_TAG = "CREATE TABLE accounting_tag (accounting_id TEXT, tag_id TEXT, PRIMARY KEY(accounting_id, tag_id));";
+	String QUERY_CREATE_TABLE_ACCOUNTING_TAG = "CREATE TABLE accounting_tag (_id TEXT PRIMARY KEY, accounting_id TEXT NOT NULL, tag_id TEXT NOT NULL);";
 }

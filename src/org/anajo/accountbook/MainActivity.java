@@ -1,13 +1,8 @@
 package org.anajo.accountbook;
 
-import org.anajo.accountbook.accounting.AccountingService;
-import org.anajo.accountbook.accounting.AccountingServiceImpl;
-
 import android.app.Activity;
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -59,19 +54,11 @@ public class MainActivity extends Activity {
 		btnExpenseList.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
-				AccountingService accountingService = AccountingServiceImpl
-						.getInstance(MainActivity.this);
-				Cursor cursor = accountingService.getAccoungtingList();
+				Intent intent = new Intent(MainActivity.this,
+						AccountingListActivity.class);
+				intent.putExtra("type", "ÁöÃâ");
 
-				cursor.moveToFirst();
-				while (!cursor.isAfterLast()) {
-					Log.d("Database Result >>> ", cursor.getString(0) + " / "
-							+ cursor.getString(1) + " / " + cursor.getInt(2)
-							+ " / " + cursor.getString(3));
-					cursor.moveToNext();
-				}
-
-				cursor.close();
+				startActivity(intent);
 			}
 		});
 

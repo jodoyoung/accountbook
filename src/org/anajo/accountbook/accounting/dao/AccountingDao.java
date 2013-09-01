@@ -51,7 +51,7 @@ public class AccountingDao {
 				Locale.KOREA);
 
 		ContentValues values = new ContentValues();
-		values.put("id", accounting.getId());
+		values.put("_id", accounting.getId());
 		values.put("type", accounting.getTypeStr());
 		values.put("amount", accounting.getAmount());
 		values.put("deal_date", sdf.format(accounting.getDealDate()));
@@ -73,7 +73,7 @@ public class AccountingDao {
 	public Cursor getAccountingList() {
 		SQLiteDatabase db = databaseHelper.getReadableDatabase();
 
-		Cursor cursor = db.query("accounting", new String[] { "id", "type",
+		Cursor cursor = db.query("accounting", new String[] { "_id", "type",
 				"amount", "deal_date" }, null, null, null, null, null);
 
 		if (cursor != null) {
