@@ -3,7 +3,14 @@
 
     <string name="app_name">가계부</string>
     <string name="action_settings">Settings</string>
-    <string name="hell_world">Hell world!</string>
+    <string name="current_month">이번달</string>
     <string name="expense_create">지출 등록</string>
+    <string name="income_create">수입 등록</string>
+    <string name="expense_list">지출 내역</string>
+    <string name="income_list">수입 내역</string>
+    
+    <string name="tag">TAG</string>
+    <string name="expense_amount">지출 금액</string>
+    <string name="go_back">뒤로 가기</string>
 
 </resources>

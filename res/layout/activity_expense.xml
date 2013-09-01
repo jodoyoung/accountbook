@@ -12,15 +12,43 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hell_world" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="37dp"
+        android:text="@string/expense_amount"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <EditText
-        android:id="@+id/editText1"
+    <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="106dp"
+        android:layout_below="@+id/txtAmount"
+        android:layout_marginRight="14dp"
+        android:layout_marginTop="16dp"
+        android:layout_toLeftOf="@+id/btnCreateExpense"
+        android:text="@string/tag"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/txtTag"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignLeft="@+id/txtAmount"
+        android:ems="10"
+        android:inputType="number" >
+    </EditText>
+
+    <EditText
+        android:id="@+id/txtAmount"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView1"
+        android:layout_alignBottom="@+id/textView1"
+        android:layout_marginLeft="16dp"
+        android:layout_toRightOf="@+id/textView1"
         android:ems="10"
         android:inputType="number" >
 
@@ -28,11 +56,21 @@
     </EditText>
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/btnGoBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/btnCreateExpense"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
+        android:layout_marginTop="82dp"
+        android:text="@string/go_back" />
+
+    <Button
+        android:id="@+id/btnCreateExpense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btnGoBack"
+        android:layout_below="@+id/txtTag"
+        android:layout_marginTop="29dp"
         android:text="@string/expense_create" />
 
 </RelativeLayout>

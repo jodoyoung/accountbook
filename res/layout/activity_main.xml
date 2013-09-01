@@ -12,15 +12,44 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hell_world" />
+        android:text="@string/current_month" />
 
     <Button
         android:id="@+id/btnCreateExpense"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="139dp"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="150dp"
+        android:layout_marginLeft="31dp"
         android:text="@string/expense_create" />
+
+    <Button
+        android:id="@+id/btnExpenseList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btnCreateExpense"
+        android:layout_below="@+id/btnCreateIncome"
+        android:layout_marginTop="18dp"
+        android:text="@string/expense_list" />
+
+    <Button
+        android:id="@+id/btnIncomeList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnExpenseList"
+        android:layout_alignBottom="@+id/btnExpenseList"
+        android:layout_alignLeft="@+id/btnCreateIncome"
+        android:text="@string/income_list" />
+
+    <Button
+        android:id="@+id/btnCreateIncome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnCreateExpense"
+        android:layout_alignBottom="@+id/btnCreateExpense"
+        android:layout_marginLeft="21dp"
+        android:layout_toRightOf="@+id/btnCreateExpense"
+        android:text="@string/income_create" />
 
 </RelativeLayout>
