@@ -37,6 +37,13 @@ public class AccountingServiceImpl implements AccountingService {
 
 	@Override
 	public void createAccounting(Accounting accounting) {
+		String tagText = accounting.getTag();
+		String[] tags = tagText.split(",");
+		
+		for(String tag : tags) {
+			
+		}
+
 		accountingDao.createAccounting(accounting);
 	}
 

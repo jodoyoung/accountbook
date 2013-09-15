@@ -16,7 +16,7 @@ public abstract class Accounting {
 	/** 금액 */
 	private Double amount;
 
-	/** TAG */
+	/** Tag */
 	private String tag;
 
 	/** 거래일시 */
