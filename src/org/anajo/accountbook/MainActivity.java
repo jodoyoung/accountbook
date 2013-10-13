@@ -31,6 +31,9 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
+		// Splash(로딩화면) 띄우기
+		startActivity(new Intent(this, SplashActivity.class));
 
 		btnCreateExpense = (Button) findViewById(R.id.btnCreateExpense);
 		btnCreateExpense.setOnClickListener(new OnClickListener() {
