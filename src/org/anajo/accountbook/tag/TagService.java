@@ -15,9 +15,9 @@ public interface TagService {
 	/**
 	 * Tag 추가
 	 * 
-	 * @param tag
+	 * @param tagName
 	 */
-	void createTag(Tag tag);
+	void createTag(String tagName);
 
 	/**
 	 * Tag 삭제

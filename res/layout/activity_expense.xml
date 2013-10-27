@@ -38,7 +38,7 @@
         android:layout_alignBottom="@+id/textView2"
         android:layout_alignLeft="@+id/txtAmount"
         android:ems="10"
-        android:inputType="number" >
+        android:inputType="text" >
     </EditText>
 
     <EditText
@@ -51,7 +51,7 @@
         android:layout_toRightOf="@+id/textView1"
         android:ems="10"
         android:inputType="number" >
-
+        
         <requestFocus />
     </EditText>
 

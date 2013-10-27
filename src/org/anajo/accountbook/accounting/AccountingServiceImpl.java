@@ -2,6 +2,8 @@ package org.anajo.accountbook.accounting;
 
 import org.anajo.accountbook.accounting.dao.AccountingDao;
 import org.anajo.accountbook.accounting.model.Accounting;
+import org.anajo.accountbook.tag.TagService;
+import org.anajo.accountbook.tag.TagServiceImpl;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -12,8 +14,11 @@ public class AccountingServiceImpl implements AccountingService {
 
 	private AccountingDao accountingDao;
 
+	private TagService tagService;
+
 	private AccountingServiceImpl(Context context) {
 		accountingDao = AccountingDao.getInstance(context);
+		tagService = TagServiceImpl.getInstnace(context);
 	}
 
 	public static AccountingService getInstance(Context context) {
@@ -27,21 +32,13 @@ public class AccountingServiceImpl implements AccountingService {
 		return instance;
 	}
 
-	public AccountingDao getAccountingDao() {
-		return accountingDao;
-	}
-
-	public void setAccountingDao(AccountingDao accountingDao) {
-		this.accountingDao = accountingDao;
-	}
-
 	@Override
 	public void createAccounting(Accounting accounting) {
 		String tagText = accounting.getTag();
 		String[] tags = tagText.split(",");
-		
-		for(String tag : tags) {
-			
+
+		for (String tagName : tags) {
+			tagService.createTag(tagName);
 		}
 
 		accountingDao.createAccounting(accounting);

@@ -56,6 +56,36 @@ public class TagDao {
 	}
 
 	/**
+	 * Tag 조회 (name)
+	 * 
+	 * @param tagName
+	 * @return
+	 */
+	public Tag findTagByName(String tagName) {
+		SQLiteDatabase db = databaseHelper.getReadableDatabase();
+
+		Cursor cursor = db.query("tag", new String[] { "_id", "name" },
+				"name=?", new String[] { tagName }, null, null, null, null);
+
+		if (cursor != null) {
+			cursor.moveToFirst();
+		}
+
+		Tag tag = null;
+
+		if (cursor.moveToNext()) {
+			tag = new Tag();
+			tag.setId(cursor.getString(0));
+			tag.setName(cursor.getString(1));
+		}
+
+		cursor.close();
+		db.close();
+
+		return tag;
+	}
+
+	/**
 	 * Tag 삭제
 	 * 
 	 * @param tagId
