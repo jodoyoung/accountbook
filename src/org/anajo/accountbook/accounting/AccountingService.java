@@ -1,5 +1,7 @@
 package org.anajo.accountbook.accounting;
 
+import java.util.List;
+
 import org.anajo.accountbook.accounting.model.Accounting;
 
 import android.database.Cursor;
@@ -31,7 +33,14 @@ public interface AccountingService {
 	 * 
 	 * @return
 	 */
-	Cursor getAccoungtingList();
+	List<Accounting> getAccountingList();
+
+	/**
+	 * 지출/수입 전체내역 조회(Cursor)
+	 * 
+	 * @return
+	 */
+	Cursor getAccoungtingCursor();
 
 	Accounting getExpenseList();
 

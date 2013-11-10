@@ -2,13 +2,13 @@ package org.anajo.accountbook;
 
 import org.anajo.accountbook.accounting.AccountingService;
 import org.anajo.accountbook.accounting.AccountingServiceImpl;
+import org.anajo.accountbook.accounting.adapter.AccountingListAdapter;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
+import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.SimpleCursorAdapter;
 
 /**
  * 지출 등록 화면
@@ -19,7 +19,7 @@ import android.widget.SimpleCursorAdapter;
 public class AccountingListActivity extends Activity {
 
 	/** 지출/수입 목록 */
-	ListView viewAccountingList;
+	ListView viewAccountingList = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -33,17 +33,20 @@ public class AccountingListActivity extends Activity {
 
 		AccountingService accountingService = AccountingServiceImpl
 				.getInstance(AccountingListActivity.this);
-		Cursor cursor = accountingService.getAccoungtingList();
+		// Cursor cursor = accountingService.getAccoungtingList();
+		//
+		// cursor.moveToFirst();
+		//
+		// String[] columnName = new String[] { "_id", "amount", "deal_date" };
+		// int[] labelName = new int[] { R.id.textView3, R.id.textView1,
+		// R.id.textView2 };
+		//
+		// @SuppressWarnings("deprecation")
+		// SimpleCursorAdapter adapter = new SimpleCursorAdapter(this,
+		// R.layout.accounting_list_item, cursor, columnName, labelName);
 
-		cursor.moveToFirst();
-
-		String[] columnName = new String[] { "_id", "amount", "deal_date" };
-		int[] labelName = new int[] { R.id.textView3, R.id.textView1,
-				R.id.textView2 };
-
-		@SuppressWarnings("deprecation")
-		SimpleCursorAdapter adapter = new SimpleCursorAdapter(this,
-				R.layout.accounting_list_item, cursor, columnName, labelName);
+		ListAdapter adapter = new AccountingListAdapter(this,
+				accountingService.getAccountingList());
 
 		viewAccountingList.setAdapter(adapter);
 

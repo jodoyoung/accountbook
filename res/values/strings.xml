@@ -10,7 +10,8 @@
     <string name="income_list">수입 내역</string>
     
     <string name="tag">TAG</string>
-    <string name="expense_amount">지출 금액</string>
+    <string name="amount">금액</string>
     <string name="go_back">뒤로 가기</string>
+    <string name="tag_spinner">TAG</string>
 
 </resources>

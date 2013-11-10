@@ -25,13 +25,14 @@ public final class R {
         public static final int splash=0x7f020001;
     }
     public static final class id {
-        public static final int action_settings=0x7f08000b;
-        public static final int btnCreateExpense=0x7f080005;
-        public static final int btnCreateIncome=0x7f080009;
-        public static final int btnExpenseList=0x7f080008;
-        public static final int btnGoBack=0x7f080007;
-        public static final int btnIncomeList=0x7f08000a;
+        public static final int action_settings=0x7f08000c;
+        public static final int btnCreateExpense=0x7f080007;
+        public static final int btnCreateIncome=0x7f08000a;
+        public static final int btnExpenseList=0x7f080009;
+        public static final int btnGoBack=0x7f080008;
+        public static final int btnIncomeList=0x7f08000b;
         public static final int listView1=0x7f080003;
+        public static final int tag_spinner=0x7f080005;
         public static final int textView1=0x7f080000;
         public static final int textView2=0x7f080001;
         public static final int textView3=0x7f080002;
@@ -50,15 +51,16 @@ public final class R {
     }
     public static final class string {
         public static final int action_settings=0x7f050001;
+        public static final int amount=0x7f050008;
         public static final int app_name=0x7f050000;
         public static final int current_month=0x7f050002;
-        public static final int expense_amount=0x7f050008;
         public static final int expense_create=0x7f050003;
         public static final int expense_list=0x7f050005;
         public static final int go_back=0x7f050009;
         public static final int income_create=0x7f050004;
         public static final int income_list=0x7f050006;
         public static final int tag=0x7f050007;
+        public static final int tag_spinner=0x7f05000a;
     }
     public static final class style {
         /** 

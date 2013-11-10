@@ -4,6 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Locale;
 
 import org.anajo.accountbook.DatabaseHelper;
+import org.anajo.accountbook.Environment;
 import org.anajo.accountbook.accounting.model.Accounting;
 
 import android.content.ContentValues;
@@ -47,8 +48,8 @@ public class AccountingDao {
 	public void createAccounting(Accounting accounting) {
 		SQLiteDatabase db = databaseHelper.getWritableDatabase();
 
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss",
-				Locale.KOREA);
+		SimpleDateFormat sdf = new SimpleDateFormat(
+				Environment.DOMAIN_DATE_FORMAT, Locale.KOREA);
 
 		ContentValues values = new ContentValues();
 		values.put("_id", accounting.getId());

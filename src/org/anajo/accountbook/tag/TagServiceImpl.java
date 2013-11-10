@@ -50,8 +50,7 @@ public class TagServiceImpl implements TagService {
 
 	@Override
 	public List<Tag> getAllTag() {
-		// TODO Auto-generated method stub
-		return null;
+		return tagDao.getAllTag();
 	}
 
 }

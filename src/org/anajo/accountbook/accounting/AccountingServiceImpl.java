@@ -1,12 +1,21 @@
 package org.anajo.accountbook.accounting;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+
+import org.anajo.accountbook.Environment;
 import org.anajo.accountbook.accounting.dao.AccountingDao;
 import org.anajo.accountbook.accounting.model.Accounting;
+import org.anajo.accountbook.accounting.model.Expense;
 import org.anajo.accountbook.tag.TagService;
 import org.anajo.accountbook.tag.TagServiceImpl;
 
 import android.content.Context;
 import android.database.Cursor;
+import android.util.Log;
 
 public class AccountingServiceImpl implements AccountingService {
 
@@ -51,8 +60,37 @@ public class AccountingServiceImpl implements AccountingService {
 	}
 
 	@Override
-	public Cursor getAccoungtingList() {
+	public Cursor getAccoungtingCursor() {
 		return accountingDao.getAccountingList();
+	}
+
+	@Override
+	public List<Accounting> getAccountingList() {
+		Cursor cursor = accountingDao.getAccountingList();
+
+		if (cursor != null) {
+			cursor.moveToFirst();
+		}
+
+		List<Accounting> list = new ArrayList<Accounting>();
+		Accounting accounting = null;
+
+		SimpleDateFormat sdf = new SimpleDateFormat(
+				Environment.DOMAIN_DATE_FORMAT, Locale.KOREAN);
+
+		while (cursor.moveToNext()) {
+			accounting = new Expense();
+			accounting.setId(cursor.getString(0));
+			accounting.setAmount(cursor.getDouble(2));
+			try {
+				accounting.setDealDate(sdf.parse(cursor.getString(3)));
+			} catch (ParseException e) {
+				e.printStackTrace();
+			}
+			list.add(accounting);
+		}
+
+		return list;
 	}
 
 	@Override

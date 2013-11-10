@@ -16,34 +16,12 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="37dp"
-        android:text="@string/expense_amount"
+        android:text="@string/amount"
         android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/txtAmount"
-        android:layout_marginRight="14dp"
-        android:layout_marginTop="16dp"
-        android:layout_toLeftOf="@+id/btnCreateExpense"
-        android:text="@string/tag"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <EditText
-        android:id="@+id/txtTag"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView2"
-        android:layout_alignBottom="@+id/textView2"
-        android:layout_alignLeft="@+id/txtAmount"
-        android:ems="10"
-        android:inputType="text" >
-    </EditText>
 
     <EditText
         android:id="@+id/txtAmount"
-        android:layout_width="150dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/textView1"
         android:layout_alignBottom="@+id/textView1"
@@ -55,22 +33,52 @@
         <requestFocus />
     </EditText>
 
-    <Button
-        android:id="@+id/btnGoBack"
+    <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btnCreateExpense"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="82dp"
-        android:text="@string/go_back" />
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/txtAmount"
+        android:layout_marginTop="50dp"
+        android:text="@string/tag"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Spinner
+        android:id="@+id/tag_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/txtAmount"
+        android:layout_alignRight="@+id/txtTag"
+        android:layout_alignTop="@+id/textView2"
+        android:prompt="@string/tag_spinner" />
+
+    <EditText
+        android:id="@+id/txtTag"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignRight="@+id/txtAmount"
+        android:layout_below="@+id/textView2"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:inputType="text" />
 
     <Button
         android:id="@+id/btnCreateExpense"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/btnGoBack"
         android:layout_below="@+id/txtTag"
-        android:layout_marginTop="29dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="52dp"
         android:text="@string/expense_create" />
+
+    <Button
+        android:id="@+id/btnGoBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btnCreateExpense"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="59dp"
+        android:text="@string/go_back" />
 
 </RelativeLayout>

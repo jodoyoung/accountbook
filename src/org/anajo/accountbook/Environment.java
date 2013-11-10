@@ -22,4 +22,7 @@ public interface Environment {
 
 	/** Accounting-Tag Mapping Table */
 	String QUERY_CREATE_TABLE_ACCOUNTING_TAG = "CREATE TABLE accounting_tag (_id TEXT PRIMARY KEY, accounting_id TEXT NOT NULL, tag_id TEXT NOT NULL);";
+
+	/** Domain - Date Format */
+	String DOMAIN_DATE_FORMAT = "yyyy-MM-dd HH:mm:ss";
 }
